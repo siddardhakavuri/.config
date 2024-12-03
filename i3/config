@@ -45,7 +45,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -249,9 +249,10 @@ exec feh --bg-scale /home/siddhu/Pictures/desert_blue.jpg
 # bindsym $mod+Shift+Control+j move container to output down
 # bindsym $mod+Shift+Control+k move container to output up
 
+# Low battery notification script
+exec --no-startup-id ~/Desktop/low_battery_notification.sh
+
 # Set touchpad to natural scrolling
 exec --no-startup-id xinput set-prop "SYNA8008:00 06CB:CE58 Touchpad" "libinput Natural Scrolling Enabled" 1
 
-# Low battery notification script
-exec --no-startup-id -watch -n 30 /home/siddhu/Desktop/low_battery_notification.sh
 
