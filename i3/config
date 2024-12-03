@@ -220,7 +220,7 @@ bar {
 }
 
 # Window compositor Picom
-exec_always --no-startup-id picom &
+exec_always --no-startup-id picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0 &
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
@@ -251,3 +251,7 @@ exec feh --bg-scale /home/siddhu/Pictures/desert_blue.jpg
 
 # Set touchpad to natural scrolling
 exec --no-startup-id xinput set-prop "SYNA8008:00 06CB:CE58 Touchpad" "libinput Natural Scrolling Enabled" 1
+
+# Low battery notification script
+exec --no-startup-id -watch -n 30 /home/siddhu/Desktop/low_battery_notification.sh
+
